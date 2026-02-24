@@ -1,0 +1,153 @@
+{
+  "columns": [
+    {
+      "id": "planning",
+      "title": "Planning",
+      "color": "#eab308",
+      "tasks": [
+        {
+          "id": "1",
+          "title": "Resolve Moltbot workspace access",
+          "description": "Verify RethinkLedgers/Moltbot exists and grant bob-msg2ai access",
+          "date": "2026-01-30",
+          "priority": "high",
+          "status": "BLOCKING",
+          "comments": [
+            {
+              "id": "c1",
+              "author": "Bart",
+              "text": "Need to check GitHub permissions",
+              "timestamp": "2026-01-30T10:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Explore existing codebases",
+          "description": "Wait for Bart to provide GitHub URLs for ai-ambassador.xyz or msg2ai.xyz",
+          "date": "2026-01-30",
+          "priority": "high",
+          "status": "BLOCKING",
+          "comments": []
+        },
+        {
+          "id": "3",
+          "title": "Identify quick wins",
+          "description": "Find low-hanging fruit once codebases are accessible",
+          "date": "2026-01-30",
+          "priority": "medium",
+          "status": "BLOCKING",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "id": "onhold",
+      "title": "On Hold",
+      "color": "#ef4444",
+      "tasks": [
+        {
+          "id": "4",
+          "title": "Access Moltbot workspace",
+          "description": "Cannot access RethinkLedgers/Moltbot repo (404). Need Bart to verify repo exists and grant access.",
+          "date": "2026-01-30",
+          "priority": "high",
+          "status": "Cannot clone",
+          "comments": [
+            {
+              "id": "c2",
+              "author": "Bob",
+              "text": "Waiting for repository access",
+              "timestamp": "2026-01-30T14:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inprogress",
+      "title": "In Progress",
+      "color": "#3b82f6",
+      "tasks": [
+        {
+          "id": "5",
+          "title": "Morning brief & setup",
+          "description": "Created morning brief with MT priority items and productivity suggestions.",
+          "date": "2026-01-30 14:25 UTC",
+          "priority": "medium",
+          "status": "Drafting",
+          "comments": []
+        },
+        {
+          "id": "6",
+          "title": "Command Center UI with Kanban",
+          "description": "Adding Kanban board to Command Center for task visualization",
+          "date": "2026-01-31",
+          "priority": "high",
+          "status": "Active",
+          "comments": [
+            {
+              "id": "c3",
+              "author": "Bart",
+              "text": "Make it mobile friendly",
+              "timestamp": "2026-02-01T01:58:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "completed",
+      "title": "Completed",
+      "color": "#22c55e",
+      "tasks": [
+        {
+          "id": "7",
+          "title": "Setup email sending",
+          "description": "Configure Zoho Mail SMTP with app-specific password.",
+          "date": "2026-01-30 11:56 UTC",
+          "priority": "high",
+          "status": "Complete",
+          "comments": []
+        },
+        {
+          "id": "8",
+          "title": "Fix hardcoded service account key security",
+          "description": "Move GCP SA key from auth-profiles.json to GCP Secret Manager",
+          "date": "2026-01-30 12:02 UTC",
+          "priority": "high",
+          "status": "Complete",
+          "comments": []
+        },
+        {
+          "id": "9",
+          "title": "Setup GitHub access",
+          "description": "Create GitHub PAT, store in GCP Secret Manager, test API access",
+          "date": "2026-01-30 13:14 UTC",
+          "priority": "high",
+          "status": "Complete",
+          "comments": []
+        },
+        {
+          "id": "10",
+          "title": "Setup email reading",
+          "description": "Configure IMAP access to bob@msg2ai.xyz via Zoho Mail",
+          "date": "2026-01-30 13:17 UTC",
+          "priority": "high",
+          "status": "Complete",
+          "comments": []
+        },
+        {
+          "id": "11",
+          "title": "Command Center Deployment",
+          "description": "Build and deploy Next.js Command Center to Vercel",
+          "date": "2026-01-31",
+          "priority": "high",
+          "status": "Complete",
+          "comments": []
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-02-01T02:00:00Z"
+}

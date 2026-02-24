@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "last_updated": "2026-01-31T05:45:00Z",
+  "categories": {
+    "github": {
+      "name": "GitHub",
+      "description": "GitHub operations, Git workflows, repo management",
+      "skills": [
+        {
+          "id": "github-clone",
+          "name": "Clone GitHub Repository",
+          "description": "Clone a GitHub repository to local workspace",
+          "code": "git clone <repo_url>"
+        },
+        {
+          "id": "github-status",
+          "name": "Check GitHub Status",
+          "description": "Check repository status and changes",
+          "code": "git status"
+        }
+      ]
+    },
+    "gcp": {
+      "name": "Google Cloud Platform",
+      "description": "GCP Secret Manager, Cloud functions, IAM management",
+      "skills": [
+        {
+          "id": "gcp-get-secret",
+          "name": "Get Secret from GCP",
+          "description": "Retrieve a secret from GCP Secret Manager",
+          "code": "python3 /home/node/clawd/skills/get_secret.py <secret_name>"
+        }
+      ]
+    },
+    "email": {
+      "name": "Email",
+      "description": "SMTP/IMAP email sending and receiving via Zoho Mail",
+      "skills": [
+        {
+          "id": "email-send-simple",
+          "name": "Send Simple Email",
+          "description": "Send an email via Zoho Mail SMTP",
+          "code": "python3 /home/node/clawd/skills/email-simple-send.py <to> <subject> <body>"
+        },
+        {
+          "id": "email-test",
+          "name": "Test Email Sending",
+          "description": "Send a test email to verify SMTP configuration",
+          "code": "python3 /home/node/clawd/skills/email-simple-send.py"
+        }
+      ]
+    },
+    "web": {
+      "name": "Web",
+      "description": "Web crawling, scraping, API interactions",
+      "skills": [
+        {
+          "id": "firecrawl-scrape",
+          "name": "Scrape URL with Firecrawl",
+          "description": "Scrape a single URL using Firecrawl API",
+          "code": "python3 /home/node/clawd/skills/firecrawl-scraper-stdlib.py --url <url>"
+        },
+        {
+          "id": "firecrawl-test",
+          "name": "Test Firecrawl API Key",
+          "description": "Validate Firecrawl API key",
+          "code": "python3 /home/node/clawd/skills/firecrawl-scraper-stdlib.py --test-key"
+        },
+        {
+          "id": "weather-fetch",
+          "name": "Fetch Weather",
+          "description": "Get current weather for any city",
+          "code": "python3 /home/node/clawd/skills/weather-fetch.py <city>"
+        }
+      ]
+    },
+    "system": {
+      "name": "System",
+      "description": "VM operations, file system, process management",
+      "skills": [
+        {
+          "id": "system-file-read",
+          "name": "Read File",
+          "description": "Read contents of a file",
+          "code": "cat <file_path>"
+        },
+        {
+          "id": "system-file-write",
+          "name": "Write File",
+          "description": "Write content to a file",
+          "code": "echo '<content>' > <file_path>"
+        },
+        {
+          "id": "system-exec",
+          "name": "Execute Command",
+          "description": "Run a shell command",
+          "code": "<command>"
+        },
+        {
+          "id": "task-add",
+          "name": "Add Task",
+          "description": "Create a new task",
+          "code": "python3 /home/node/clawd/skills/task-manager.py add <description> [--priority]"
+        },
+        {
+          "id": "task-list",
+          "name": "List Tasks",
+          "description": "List all tasks with optional filters",
+          "code": "python3 /home/node/clawd/skills/task-manager.py list [--status] [--priority]"
+        },
+        {
+          "id": "task-update",
+          "name": "Update Task",
+          "description": "Update task status, priority, or description",
+          "code": "python3 /home/node/clawd/skills/task-manager.py update <task_id> [--status] [--priority]"
+        },
+        {
+          "id": "task-delete",
+          "name": "Delete Task",
+          "description": "Remove a task from the list",
+          "code": "python3 /home/node/clawd/skills/task-manager.py delete <task_id>"
+        },
+        {
+          "id": "task-kanban",
+          "name": "Show Kanban Board",
+          "description": "Display tasks in Kanban format with columns: Todo, In Progress, On Hold, Done",
+          "code": "python3 /home/node/clawd/skills/kanban-view-improved.py"
+        },
+        {
+          "id": "kb-list",
+          "name": "List Knowledge Base",
+          "description": "Show all KB entries organized by category",
+          "code": "python3 /home/node/clawd/skills/kb-manager.py list"
+        },
+        {
+          "id": "kb-search",
+          "name": "Search Knowledge Base",
+          "description": "Search KB entries by title or description content",
+          "code": "python3 /home/node/clawd/skills/kb-manager.py search <term>"
+        }
+      ]
+    },
+    "ai": {
+      "name": "AI & Content",
+      "description": "AI-powered content generation, analysis, and processing",
+      "skills": [
+        {
+          "id": "ai-blog-draft",
+          "name": "Draft Blog Post",
+          "description": "Generate a blog post draft on a topic",
+          "code": "Ask Bob to draft a blog post"
+        },
+        {
+          "id": "ai-summarize",
+          "name": "Summarize Document",
+          "description": "Summarize a long document or text",
+          "code": "Ask Bob to summarize <file or text>"
+        }
+      ]
+    }
+  },
+  "kb_entries": {
+    "KB001": {
+      "title": "Email Sending",
+      "category": "email",
+      "file": "KB001-email-sending.md"
+    },
+    "KB002": {
+      "title": "Firecrawl API",
+      "category": "web",
+      "file": "KB002-firecrawl.md"
+    },
+    "KB003": {
+      "title": "Image Limitations",
+      "category": "system",
+      "file": "KB003-image-limitations.md"
+    },
+    "KB004": {
+      "title": "Weather Fetching",
+      "category": "web",
+      "file": "KB004-weather-fetching.md"
+    },
+    "KB005": {
+      "title": "Firecrawl Integration",
+      "category": "web",
+      "file": "KB005-firecrawl-integration.md"
+    },
+    "KB006": {
+      "title": "Task Management",
+      "category": "system",
+      "file": "KB006-task-management.md"
+    },
+    "KB007": {
+      "title": "Kanban Task Board",
+      "category": "system",
+      "file": "KB007-kanban-board.md"
+    },
+    "KB008": {
+      "title": "Knowledge Base Search",
+      "category": "system",
+      "file": "KB008-kb-search.md"
+    }
+  }
+}

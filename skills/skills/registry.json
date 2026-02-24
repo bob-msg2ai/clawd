@@ -1,0 +1,74 @@
+{
+  "version": 2,
+  "last_updated": "2026-01-30T17:15:00Z",
+  "categories": {
+    "web": {
+      "name": "Web",
+      "description": "Web crawling, scraping, API interactions",
+      "skills": [
+        {
+          "id": "firecrawl-test",
+          "name": "Test Firecrawl API",
+          "description": "Test Firecrawl API access with provided API key",
+          "code": "python3 /home/node/clawd/skills/firecrawl-test.py"
+        },
+        {
+          "id": "firecrawl-crawl",
+          "name": "Crawl Website",
+          "description": "Crawl a website using Firecrawl",
+          "code": "python3 /home/node/clawd/skills/firecrawl-crawl.py"
+        },
+        {
+          "id": "firecrawl-scrape",
+          "name": "Scrape Specific Page",
+          "description": "Scrape a specific URL using Firecrawl",
+          "code": "python3 /home/node/clawd/skills/firecrawl-scrape.py"
+        },
+        {
+          "id": "weather-fetch",
+          "name": "Weather Fetch",
+          "description": "Fetch weather information using wttr.in API (free, no key required)",
+          "code": "python3 /home/node/clawd/skills/weather-fetch.py"
+        }
+      ]
+    },
+    "github": {
+      "name": "GitHub",
+      "description": "GitHub operations, Git workflows, repo management",
+      "skills": []
+    },
+    "gcp": {
+      "name": "Google Cloud Platform",
+      "description": "GCP Secret Manager, Cloud functions, IAM management",
+      "skills": []
+    },
+    "email": {
+      "name": "Email",
+      "description": "SMTP/IMAP email sending and receiving via Zoho Mail",
+      "skills": [
+        {
+          "id": "email-send-test",
+          "name": "Test Email Sending",
+          "description": "Send a test email to verify SMTP configuration",
+          "code": "python3 /tmp/send_email.py"
+        },
+        {
+          "id": "email-check-inbox",
+          "name": "Check Email Inbox",
+          "description": "Connect to IMAP and check for unread emails",
+          "code": "python3 /tmp/test_email_read.py"
+        }
+      ]
+    },
+    "git": {
+      "name": "Git",
+      "description": "Git operations: clone, commit, push, branch management",
+      "skills": []
+    },
+    "system": {
+      "name": "System",
+      "description": "VM operations, file system, process management",
+      "skills": []
+    }
+  }
+}

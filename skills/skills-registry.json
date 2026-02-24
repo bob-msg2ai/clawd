@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "last_updated": "2026-01-30T14:47:00Z",
+  "categories": {
+    "github": {
+      "name": "GitHub",
+      "description": "GitHub operations, Git workflows, repo management",
+      "skills": []
+    },
+    "gcp": {
+      "name": "Google Cloud Platform",
+      "description": "GCP Secret Manager, Cloud functions, IAM management",
+      "skills": []
+    },
+    "email": {
+      "name": "Email",
+      "description": "SMTP/IMAP email sending and receiving via Zoho Mail",
+      "skills": [
+        {
+          "id": "email-send-test",
+          "name": "Test Email Sending",
+          "description": "Send a test email to verify SMTP configuration",
+          "code": "python3 /tmp/send_email.py"
+        },
+        {
+          "id": "email-check-inbox",
+          "name": "Check Email Inbox",
+          "description": "Connect to IMAP and check for unread emails",
+          "code": "python3 /tmp/test_email_read.py"
+        }
+      ]
+    },
+    "git": {
+      "name": "Git",
+      "description": "Git operations: clone, commit, push, branch management",
+      "skills": []
+    },
+    "system": {
+      "name": "System",
+      "description": "VM operations, file system, process management",
+      "skills": []
+    }
+  }
+}

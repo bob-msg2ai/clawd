@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "content": "# Example Domain\n\nThis domain is for use in documentation examples without needing permission. Avoid use in operations.\n\n[Learn more](https://iana.org/domains/example)",
+    "markdown": "# Example Domain\n\nThis domain is for use in documentation examples without needing permission. Avoid use in operations.\n\n[Learn more](https://iana.org/domains/example)",
+    "linksOnPage": [
+      "https://iana.org/domains/example"
+    ],
+    "metadata": {
+      "language": "en",
+      "viewport": "width=device-width, initial-scale=1",
+      "title": "Example Domain",
+      "scrapeId": "019c1270-b40a-768e-9eb1-539f6d4f3e65",
+      "sourceURL": "https://example.com",
+      "url": "https://example.com/",
+      "contentType": "text/html",
+      "proxyUsed": "basic",
+      "cacheState": "hit",
+      "cachedAt": "2026-01-31T03:19:27.502Z",
+      "creditsUsed": 1,
+      "pageStatusCode": 200
+    }
+  },
+  "returnCode": 200
+}

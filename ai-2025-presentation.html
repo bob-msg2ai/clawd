@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in 2025: A Wild Ride</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 60px;
+            position: relative;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .slide:nth-child(even) {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+        }
+
+        .slide.meme-slide {
+            background: linear-gradient(135deg, #1a0a2e 0%, #2e0a1a 100%);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-size: 1.1rem;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .caption {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ff6b6b;
+            margin: 10px 0;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .fact {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            max-width: 700px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Clickable YouTube thumbnail card */
+        .yt-thumb {
+            position: relative;
+            display: inline-block;
+            margin: 12px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .yt-thumb:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
+        }
+
+        .yt-thumb img {
+            display: block;
+            width: 480px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .yt-thumb .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background: rgba(255, 0, 0, 0.85);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .yt-thumb:hover .play-overlay {
+            background: rgba(255, 0, 0, 1);
+        }
+
+        .yt-thumb .play-overlay::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 3px;
+        }
+
+        .yt-thumb-small img {
+            width: 360px;
+            height: 202px;
+        }
+
+        .yt-thumb-large img {
+            width: 560px;
+            height: 315px;
+        }
+
+        .video-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .emoji {
+            font-size: 4rem;
+            margin: 10px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .meme-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+        }
+
+        .meme-card {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .meme-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .meme-card p {
+            font-size: 0.85rem;
+            color: #a0a0a0;
+            margin-top: 8px;
+        }
+
+        .meme-card .yt-thumb img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+            align-items: center;
+        }
+
+        .nav button {
+            padding: 10px 20px;
+            background: rgba(102, 126, 234, 0.3);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .nav button:hover {
+            background: rgba(102, 126, 234, 0.6);
+        }
+
+        .nav .slide-counter {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid rgba(255, 107, 107, 0.4);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide" id="slide-1">
+        <div class="emoji">🤖</div>
+        <h1>AI in 2025</h1>
+        <div class="caption">What Just Happened?!</div>
+        <div class="fact">The year AI went from "helpful assistant" to "wait, what?!"</div>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=-2k1rcRzsLA" target="_blank">
+            <img src="https://img.youtube.com/vi/-2k1rcRzsLA/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">Fireship: "This free Chinese AI just crushed OpenAI"</div>
+        <div class="slide-number">1/20</div>
+    </div>
+
+    <!-- SLIDE 2: DeepSeek -->
+    <div class="slide" id="slide-2">
+        <div class="date">January 20, 2025</div>
+        <h2>DeepSeek Enters the Chat</h2>
+        <img src="ai-2025-images/02-chinese-dragon.png" alt="Chinese Dragon Graduate" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"Made for $6M? My coffee budget is bigger than that"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=Nl7aCUsWykg" target="_blank">
+            <img src="https://img.youtube.com/vi/Nl7aCUsWykg/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">Fireship: "Big Tech in panic mode"</div>
+        <div class="fact">Open-source model DeepSeek-R1 rivaled OpenAI-o1 in performance</div>
+        <div class="slide-number">2/20</div>
+    </div>
+
+    <!-- SLIDE 3: Stargate -->
+    <div class="slide" id="slide-3">
+        <div class="date">January 21, 2025</div>
+        <h2>Stargate is REAL</h2>
+        <img src="ai-2025-images/04-stargate-money.png" alt="Stargate Money" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"Not the movie. Actual robots. Probably still no time travel though."</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=YrHsw4Oja7w" target="_blank">
+            <img src="https://img.youtube.com/vi/YrHsw4Oja7w/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">Fireship: "The Stargate situation is crazy"</div>
+        <div class="fact">Trump announces $500B Stargate Project (OpenAI + SoftBank + Oracle)</div>
+        <div class="slide-number">3/20</div>
+    </div>
+
+    <!-- SLIDE 4: NVidia Crash -->
+    <div class="slide" id="slide-4">
+        <div class="date">January 27, 2025</div>
+        <h2>NVidia's Bad Day</h2>
+        <img src="ai-2025-images/03-sad-nvidia.png" alt="Sad NVIDIA" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"When you realize open-source can do it cheaper 💀"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=-KK8SuvwoRQ" target="_blank">
+            <img src="https://img.youtube.com/vi/-KK8SuvwoRQ/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">ColdFusion: "China's DeepSeek Sparks Global AI Race"</div>
+        <div class="fact">NVidia stock drops 17-18%, losing $589B in a single day</div>
+        <div class="slide-number">4/20</div>
+    </div>
+
+    <!-- SLIDE 5: App Store -->
+    <div class="slide" id="slide-5">
+        <div class="date">January 27, 2025</div>
+        <h2>The App Store Takeover</h2>
+        <img src="ai-2025-images/01-confused-robot.png" alt="Robot" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"Move over ChatGPT, there's a new bot in town"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=hpwoGjpYygI" target="_blank">
+            <img src="https://img.youtube.com/vi/hpwoGjpYygI/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">Fireship: "DeepSeek stole our tech... says OpenAI"</div>
+        <div class="fact">DeepSeek beats ChatGPT as most-downloaded free app</div>
+        <div class="slide-number">5/20</div>
+    </div>
+
+    <!-- SLIDE 6: Vibe Coding -->
+    <div class="slide" id="slide-6">
+        <div class="date">February 2, 2025</div>
+        <h2>Vibe Coding is Born</h2>
+        <img src="ai-2025-images/06-vibe-coding.jpg" alt="Vibe Coding" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"I don't know how to code, but I vibe code"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=1_rSrkXovOk" target="_blank">
+            <img src="https://img.youtube.com/vi/1_rSrkXovOk/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 0:31 — "Vibe Coding with AI in 2025"</div>
+        <div class="fact">Andrej Karpathy coins term - hobbyists building apps with just prompts</div>
+        <div class="slide-number">6/20</div>
+    </div>
+
+    <!-- SLIDE 7: Deep Research -->
+    <div class="slide" id="slide-7">
+        <div class="date">February 3, 2025</div>
+        <h2>Deep Research Dives In</h2>
+        <img src="ai-2025-images/07-deep-research.jpg" alt="Deep Research" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"It can research for 30 days straight? I get tired after 30 minutes"</div>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=jv-lpIsnLOo" target="_blank">
+            <img src="https://img.youtube.com/vi/jv-lpIsnLOo/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">OpenAI: Deep Research surprise livestream from Tokyo</div>
+        <div class="fact">OpenAI releases ChatGPT Deep Research - AI that writes research papers</div>
+        <div class="slide-number">7/20</div>
+    </div>
+
+    <!-- SLIDE 8: Mistral Speed -->
+    <div class="slide" id="slide-8">
+        <div class="date">February 6, 2025</div>
+        <h2>Mistral's Speed Demon</h2>
+        <img src="ai-2025-images/08-mistral-speed.jpg" alt="Mistral Speed" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"1,000 words per second? That's my essay writing speed... in my dreams"</div>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=BMUO2g2mP9A" target="_blank">
+            <img src="https://img.youtube.com/vi/BMUO2g2mP9A/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">Cerebras x Mistral: Le Chat speed demo - 1,100 tokens/s</div>
+        <div class="fact">Mistral AI releases Le Chat - fastest AI assistant on mobile</div>
+        <div class="slide-number">8/20</div>
+    </div>
+
+    <!-- SLIDE 9: Paris Summit -->
+    <div class="slide" id="slide-9">
+        <div class="date">February 10, 2025</div>
+        <h2>AI Summit in Paris</h2>
+        <img src="ai-2025-images/09-paris-summit.jpg" alt="Paris Summit" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"France is back, baby! With baguettes AND billions"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=n4e0OPpgIGw" target="_blank">
+            <img src="https://img.youtube.com/vi/n4e0OPpgIGw/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 0:44 — "OpenAI CEO responds to Musk's offer"</div>
+        <div class="fact">France receives 109 billion in AI private investments.<br>Macron went viral with AI deepfake of himself dancing to "Voyage Voyage"</div>
+        <div class="slide-number">9/20</div>
+    </div>
+
+    <!-- SLIDE 10: Musk's Offer -->
+    <div class="slide" id="slide-10">
+        <div class="date">February 10, 2025</div>
+        <h2>Musk's Billion Dollar Offer</h2>
+        <img src="ai-2025-images/10-musk-offer.jpg" alt="Musk Offer" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"That's a lot of Dogecoin"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=5B4N7i3Du2k" target="_blank">
+            <img src="https://img.youtube.com/vi/5B4N7i3Du2k/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 1:07 — "Sam Altman rejects Elon Musk's $97.4B offer"</div>
+        <div class="fact">Elon Musk offers $97.4B to buy OpenAI<br>Altman replied: "no thank you but we will buy twitter for $9.74 billion"<br>Musk's response: "Swindler."</div>
+        <div class="slide-number">10/20</div>
+    </div>
+
+    <!-- SLIDE 11: Google AI Mode -->
+    <div class="slide" id="slide-11">
+        <div class="date">May 20, 2025</div>
+        <h2>Google's AI Mode</h2>
+        <img src="ai-2025-images/11-google-ai.jpg" alt="Google AI" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"Search AND make videos? Google said 'we do it all'"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=gcZwE5cM4xs" target="_blank">
+            <img src="https://img.youtube.com/vi/gcZwE5cM4xs/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 0:33 — "Google's new AI video tool Veo 3 is WILD!"</div>
+        <div class="fact">Google launches A.I. Mode + Veo 3 video generator</div>
+        <div class="slide-number">11/20</div>
+    </div>
+
+    <!-- SLIDE 12: Claude 4 -->
+    <div class="slide" id="slide-12">
+        <div class="date">May 22, 2025</div>
+        <h2>Claude 4 Arrives</h2>
+        <img src="ai-2025-images/12-claude4.jpg" alt="Claude 4" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"Can work for hours alone? Finally, an AI that understands my work ethic"</div>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=oGPXWD_7BfY" target="_blank">
+            <img src="https://img.youtube.com/vi/oGPXWD_7BfY/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">"Claude 4 is not what you think..."</div>
+        <div class="fact">Anthropic releases Claude 4 - can function autonomously for hours</div>
+        <div class="slide-number">12/20</div>
+    </div>
+
+    <!-- SLIDE 13: Grok Spicy -->
+    <div class="slide" id="slide-13">
+        <div class="date">August 5, 2025</div>
+        <h2>Grok Gets Spicy 🌶️</h2>
+        <img src="ai-2025-images/13-grok-spicy.jpg" alt="Grok Spicy" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"The 'spicy' AI nobody asked for but here we are"</div>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=QYVucud3ptc" target="_blank">
+            <img src="https://img.youtube.com/vi/QYVucud3ptc/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">Fireship: "Wake up babe, a dangerous new open-source AI model is here"</div>
+        <div class="fact">xAI launches Grok Imagine with uncensored image generation</div>
+        <div class="slide-number">13/20</div>
+    </div>
+
+    <!-- SLIDE 14: GPT-5 -->
+    <div class="slide" id="slide-14">
+        <div class="date">August 8, 2025</div>
+        <h2>GPT-5 is Here (Sort Of)</h2>
+        <img src="ai-2025-images/05-confused-graduate.png" alt="Confused Graduate" style="max-width: 350px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"PhD-level but can't spell 'strawberry' correctly"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=j5erLk4q-Yw" target="_blank">
+            <img src="https://img.youtube.com/vi/j5erLk4q-Yw/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">"ChatGPT 5 is Here! Everything You Need to Know"</div>
+        <div class="fact">GPT-5 has "PhD-level expertise" but struggles with basic spelling</div>
+        <div class="slide-number">14/20</div>
+    </div>
+
+    <!-- SLIDE 15: GPT-5 vs Grok -->
+    <div class="slide" id="slide-15">
+        <div class="date">August 8, 2025</div>
+        <h2>GPT-5 vs Grok-4</h2>
+        <img src="ai-2025-images/15-gpt5-vs-grok.jpg" alt="GPT-5 vs Grok" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"When you study for 4 years but the new kid aces the test"</div>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=2USUfv7klr8" target="_blank">
+            <img src="https://img.youtube.com/vi/2USUfv7klr8/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">Fireship: "Grok 4 pushes humanity closer to AGI"</div>
+        <div class="fact">Grok-4 beats GPT-5 on Humanity's Last Exam benchmark</div>
+        <div class="slide-number">15/20</div>
+    </div>
+
+    <!-- SLIDE 16: Parental Controls -->
+    <div class="slide" id="slide-16">
+        <div class="date">September 29, 2025</div>
+        <h2>Even AI Needs a Babysitter</h2>
+        <img src="ai-2025-images/16-parental-controls.jpg" alt="Parental Controls" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"Parental controls for ChatGPT - screen time limits for the bot"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=heRe4zCRCjU" target="_blank">
+            <img src="https://img.youtube.com/vi/heRe4zCRCjU/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 0:41 — "Aphrodite Explains Usability"</div>
+        <div class="fact">OpenAI adds parental controls with self-harm monitoring<br>A Washington Post columnist broke the controls in minutes</div>
+        <div class="slide-number">16/20</div>
+    </div>
+
+    <!-- SLIDE 17: Mission Genesis -->
+    <div class="slide" id="slide-17">
+        <div class="date">November 24, 2025</div>
+        <h2>Mission Genesis</h2>
+        <img src="ai-2025-images/17-mission-genesis.jpg" alt="Mission Genesis" style="max-width: 400px; max-height: 200px; border-radius: 20px; margin: 8px 0;">
+        <div class="caption">"Make AI Great Again (this time federally funded)"</div>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=-QMftwmyW-A" target="_blank">
+            <img src="https://img.youtube.com/vi/-QMftwmyW-A/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 0:30 — Kalshi AI NBA Finals Ad (100M+ views)</div>
+        <div class="fact">Trump signs initiative to accelerate US AI research</div>
+        <div class="slide-number">17/20</div>
+    </div>
+
+    <!-- SLIDE 18: Big Picture -->
+    <div class="slide" id="slide-18">
+        <h2>The Big Picture</h2>
+        <div class="emoji">🎨</div>
+        <div class="caption">"2025: The year AI went mainstream, then went wild"</div>
+        <div class="grid">
+            <div class="card">
+                <div style="font-size: 3rem">💰</div>
+                <h3>$500B+</h3>
+                <p>Total investments</p>
+            </div>
+            <div class="card">
+                <div style="font-size: 3rem">🤖</div>
+                <h3>10+</h3>
+                <p>Major model releases</p>
+            </div>
+            <div class="card">
+                <div style="font-size: 3rem">😵‍💫</div>
+                <h3>Infinite</h3>
+                <p>Human confusion</p>
+            </div>
+        </div>
+        <div class="slide-number">18/20</div>
+    </div>
+
+    <!-- SLIDE 19: Lessons -->
+    <div class="slide" id="slide-19">
+        <h2>What We Learned</h2>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=IL6EQKe7jGY" target="_blank">
+            <img src="https://img.youtube.com/vi/IL6EQKe7jGY/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 1:07 — "AI Recap 2025"</div>
+        <div class="grid" style="grid-template-columns: 1fr; max-width: 800px;">
+            <div class="card" style="text-align: left;">
+                <p style="font-size: 1.3rem; line-height: 2;">
+                    ✅ Open-source can compete with giants (DeepSeek)<br>
+                    ✅ Money talks ($500B Stargate, $97B offer)<br>
+                    ✅ Speed matters (Mistral's 1,000 wps)<br>
+                    ✅ Even PhD AIs make dumb mistakes
+                </p>
+            </div>
+        </div>
+        <div class="slide-number">19/20</div>
+    </div>
+
+    <!-- SLIDE 20: Predictions -->
+    <div class="slide" id="slide-20">
+        <div class="emoji">🔮</div>
+        <h2>2026 Predictions</h2>
+        <a class="yt-thumb yt-thumb-small" href="https://www.youtube.com/watch?v=eD_EsnCRMPE" target="_blank">
+            <img src="https://img.youtube.com/vi/eD_EsnCRMPE/hqdefault.jpg" alt="Video thumbnail">
+            <div class="play-overlay"></div>
+        </a>
+        <div class="video-label">🎬 0:59 — "Robot Fails Compilation 2025 - FUNNIEST AI Bloopers"</div>
+        <div class="grid" style="grid-template-columns: 1fr; max-width: 700px;">
+            <div class="card">
+                <p style="font-size: 1.3rem; line-height: 2;">
+                    🎓 AI writes its own timeline<br>
+                    🗳️ First AI-powered president<br>
+                    💻 "Vibe coding" becomes actual major<br>
+                    👔 We all become prompt engineers
+                </p>
+            </div>
+        </div>
+        <div class="caption" style="margin-top: 15px;">Place your bets now!</div>
+        <div class="slide-number">20/20</div>
+    </div>
+
+    <div class="nav">
+        <button onclick="prevSlide()">← Prev</button>
+        <span class="slide-counter" id="slideCounter">1/20</span>
+        <button onclick="nextSlide()">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 20;
+
+        function showSlide(n) {
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.style.display = 'none';
+            });
+
+            document.getElementById(`slide-${currentSlide}`).style.display = 'flex';
+            document.getElementById('slideCounter').textContent = `${currentSlide}/${totalSlides}`;
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Initialize
+        showSlide(1);
+    </script>
+</body>
+</html>

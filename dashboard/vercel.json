@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "name": "openclaw-mission-control",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_CONVEX_URL": "@openclaw_convex_url"
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/system-state",
+      "destination": "/api/system-state"
+    },
+    {
+      "source": "/api/agents",
+      "destination": "/api/agents"
+    },
+    {
+      "source": "/api/cron-health",
+      "destination": "/api/cron-health"
+    },
+    {
+      "source": "/api/revenue",
+      "destination": "/api/revenue"
+    },
+    {
+      "source": "/api/content-pipeline",
+      "destination": "/api/content-pipeline"
+    },
+    {
+      "source": "/api/quick-stats",
+      "destination": "/api/quick-stats"
+    }
+  ]
+}
